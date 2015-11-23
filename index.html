@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ryHeightDemo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <title>Demo for ry-height</title>
+  <script src="https://code.angularjs.org/1.5.0-beta.2/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.0-beta.2/angular-animate.min.js"></script>
+  <script>
+    angular.module('ryHeightDemo', [
+      'ngAnimate'
+    ]);
+    angular.module('ryHeightDemo')
+    .controller('mainController', function() {
+      //start with content open
+      //this.contentOne=true;
+      //this.contentTwo = true;
+    });
+  </script>
+  <script src="ryHeight.directive.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
+  <style>
+    /*Some basic styles to get us through this simple example*/
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
+    }
+    h1 {
+      font-size: 16px;
+    }
+    .one {
+      background: #3F51B5;
+      overflow-y: hidden;
+    }
+    .one.ry-height {
+      height: auto;
+      /* Animate height auto! */
+      transition: height .4s;
+    }
+    button {
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body ng-controller="mainController as demo">
+
+  <h1>Height auto adjusts smoothly to content!</h1>
+  <div ry-height class="one">
+    <button ng-click="demo.contentOne=!demo.contentOne">Toggle content 1</button>
+    <button ng-click="demo.contentTwo=!demo.contentTwo">Toggle content 2</button>
+    <div ng-if="demo.contentOne">Content 1, Content 1, Content 1, Content 1, Content 1, Content 1</div>
+    <div ng-if="demo.contentTwo">Content 2, Content 2, Content 2, Content 2, Content 2, Content 2</div>
+  </div>
+  <p>Note: ry-height directive requires Angular 1.5</p>
+
+</body>
+</html>
