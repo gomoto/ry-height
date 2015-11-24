@@ -14,13 +14,13 @@ angular.module('ryHeightDemo')
         updateHeight();
       });
       //run in parallel with animations of entering children
-      $animate.on('enter', domElement, function enter(element, phase) {
+      $animate.on('enter', innerDomElement, function enter(element, phase) {
         if (phase === 'start') {
           updateHeight();
         }
       });
       //run after element leaves
-      $animate.on('leave', domElement, function leave(element, phase) {
+      $animate.on('leave', innerDomElement, function leave(element, phase) {
         if (phase === 'close') {
           updateHeight();
         }
