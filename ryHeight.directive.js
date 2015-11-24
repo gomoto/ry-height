@@ -7,8 +7,6 @@ angular.module('ryHeightDemo')
     link: function postLink(scope, element) {
       var domElement = element[0];
       var innerDomElement = element.children()[0];
-      //hook to define the CSS height transition
-      element.addClass('ry-height');
       //wait until next digest cycle; wait for any ng-if content
       $timeout(function() {
         updateHeight();
