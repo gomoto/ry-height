@@ -9,7 +9,7 @@ angular.module('ryHeightDemo')
       var innerDomElement = element.children()[0];
       //hook to define the CSS height transition
       element.addClass('ry-height');
-      //wait until next digest cycle
+      //wait until next digest cycle; wait for any ng-if content
       $timeout(function() {
         updateHeight();
       });
